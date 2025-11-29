@@ -56,7 +56,8 @@ export default function ChatInterFace() {
     }
   };
   return (
-    <div className="max-w-3xl p-4 mx-auto rounded-xl mt-5 shadow">
+    <div className="max-w-3xl h-screen p-4 mx-auto rounded-xl mt-5 shadow flex flex-col">
+      {/* Header */}
       <div className="flex items-center gap-3 border-b p-0.5">
         <div className="h-10 w-10">
           <img
@@ -75,10 +76,13 @@ export default function ChatInterFace() {
 
         <div className="ml-auto">Dark</div>
       </div>
-      <div>
-        <Message messages={messages} />
+
+      {/* Message Section (Scrollable) */}
+      <div className="flex-1 overflow-y-auto mt-3 pr-2">
+        <Message messages={messages} isLoading={isLoading} />
       </div>
 
+      {/* Input Section */}
       <div className="flex items-center mt-4 gap-2">
         <input
           type="text"
@@ -88,13 +92,11 @@ export default function ChatInterFace() {
           onKeyPress={(e) => e.key === "Enter" && !isLoading && sendMessage()}
           placeholder="Type your message..."
           disabled={isLoading}
-          style={{ width: "80%", padding: "10px" }}
         />
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
           onClick={sendMessage}
           disabled={isLoading}
-          style={{ width: "20%", padding: "10px" }}
         >
           Push
         </button>

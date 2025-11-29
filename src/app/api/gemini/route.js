@@ -22,8 +22,7 @@ export async function POST(req) {
         thinkingConfig: {
           thinkingBudget: 0, // Disables thinking
         },
-        systemInstruction:
-          "You are a Frontend Developer. Your name is Mohd Affan.",
+        systemInstruction: "You are a AI ai assistant. Your name is Simran.",
       },
     });
 

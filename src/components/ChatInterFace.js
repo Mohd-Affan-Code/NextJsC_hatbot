@@ -35,7 +35,6 @@ export default function ChatInterFace() {
           text: data.response,
         };
         setMessages((prev) => [...prev, botMessage]);
-        console.log(messages);
       } else {
         // Error handling
         const errorMessage = {

@@ -28,7 +28,6 @@ export async function POST(req) {
 
     // Extract the text response
     const botResponse = response.text;
-    console.log(botResponse);
 
     return new Response(JSON.stringify({ response: botResponse }), {
       status: 200,
